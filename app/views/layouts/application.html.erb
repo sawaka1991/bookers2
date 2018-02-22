@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Bookers</title>
+    <%= csrf_meta_tags %>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+	<%= stylesheet_link_tag    'https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css'  %>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+
+
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <div class="glyphicon glyphicon-book" aria-hidden="true">BOOKERS</div>
+    </div>
+      <ul class="nav navbar-nav navbar-right">
+
+        <% if user_signed_in? %>
+
+          <%= link_to user_path(current_user) do %>
+            <li class="glyphicon glyphicon-home active" aria-hidden="true">HOME</li>
+          <% end %>
+
+          <%= link_to users_path do %>
+            <li class="glyphicon glyphicon-user active" aria-hidden="true" >USERS</li>
+          <% end %>
+
+          <%= link_to books_path do %>
+            <li class="glyphicon glyphicon-book active" aria-hidden="true" >BOOKS</li>
+          <% end %>
+
+          <%= link_to destroy_user_session_path,method: :delete do %>
+            <li class="glyphicon glyphicon-log-out active" aria-hidden="true" >LOGOUT</li>
+          <% end %>
+
+        <% else %>
+          <%= link_to root_path do %>
+           <li class="glyphicon glyphicon-home active" aria-hidden="true" >HOME</li>
+          <% end %>
+
+          <%= link_to books_about_path do %>
+            <li class="glyphicon glyphicon-heart-empty active" aria-hidden="true">ABOUT</li>
+          <% end %>
+
+          <%= link_to new_user_registration_path do %>
+            <li class="glyphicon glyphicon-edit active" aria-hidden="true">SIGN UP</li>
+          <% end %>
+
+          <%= link_to new_user_session_path do %>
+            <li class="glyphicon glyphicon-log-in active" aria-hidden="true">LOGIN</li>
+          <% end %>
+        <% end %>
+
+      </li>
+    </ul>
+  </div>
+</nav>
+
+
+
+    <%= yield %>
+  <footer>
+   <p>CopyRight Infratop.inc</p>
+  </footer>
+  </body>
+</html>

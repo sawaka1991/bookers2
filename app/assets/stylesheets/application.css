@@ -1,0 +1,75 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+h1, h2, h3, h4, body, nav {
+	text-align: center;
+	font-family: "Bradley Hand ITC";
+	color: #777777;
+}
+
+footer {
+	width: 80%;
+	text-align: right;
+}
+
+
+
+.table-index {
+	margin-right: auto;
+	margin-left: auto;
+	border-spacing: 10px;
+	border-collapse: separate;
+	border-style: dotted;
+	border-color: #a7a7a7;
+	border-radius: 5px;
+}
+table tr {
+	border: 1px;
+}
+.form {
+}
+.navbar-default {
+	background-color: #e7e7e7;
+}
+.sidebar {
+	height: 100%;
+}
+.active {
+	padding: 16px 15px 0 15px;
+}
+
+a:hover {
+	color: #fff;
+}
+
+.navbar-header {
+	font-size: 28px;
+	color: #fff;
+	padding-top: 10px;
+}
+
+.container-fluid {
+	width: 80%;
+}
+
+.image-field{
+	width: 200px;
+	margin:0 auto;
+	margin-bottom: 50px;
+}
+.pphoto {
+	margin-left: 30px;
+}
